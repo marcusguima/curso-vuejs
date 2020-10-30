@@ -1,0 +1,69 @@
+<script src="https://unpkg.com/vue"></script>
+
+<style>
+    #app{
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .demo {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+
+    }
+
+    .c1{
+        background-color: red;
+    }
+
+    .c2{
+        background-color: green;
+    }
+
+    .c3{
+        background-color: blue;
+    }
+
+
+</style>
+
+
+<div id="app">
+
+
+    <div class="demo" :class="estilo1" @click="aplicarCor = !aplicarCor"></div>
+    <div class="demo" :class="estilo2" @click="aplicarCor = !aplicarCor"></div>
+    <div class="demo" :class="{c3: aplicarCor}" @click="aplicarCor = !aplicarCor"></div>
+
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            aplicarCor: false
+        },
+        computed:{
+            estilo1(){
+                return{
+                    c1: this.aplicarCor,
+                    c2: !this.aplicarCor
+                }
+            },
+            estilo2(){
+                return{
+                    c2: this.aplicarCor,
+                    c1: !this.aplicarCor
+                }
+            }
+        }
+
+    })
+
+
+
+
+</script>
