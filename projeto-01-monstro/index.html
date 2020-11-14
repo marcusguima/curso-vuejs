@@ -10,6 +10,7 @@
 </head>
 <body>
 
+<!-- Painel de Pontuação -->
 <div id="app">
     <div class="panel scores">
         <div class="score">
@@ -30,28 +31,24 @@
 
     </div>
 
-    <div class="panel result">
-
+<!-- Painel de Resultado -->
+    <div class="panel result" v-if="hasResult">
+        <div v-if="monsterLife == 0" class="win">Você Ganhou!!! 😄</div>
+        <div v-else class="lose">Você Perdeu! 😢</div>
     </div>
 
+<!-- Painel dos Botões -->
     <div class="panel buttons">
-        <button id="btnNewGame"> 
-            INICIAR NOVO JOGO
-        </button>
-        <button id="btnAtack">
-            ATAQUE
-        </button>
-        <button id="btnSAtack">
-            ATAQUE ESPECIAL
-        </button>
-        <button id="btnHeal">
-            CURAR
-        </button>
-        <button id="btnQuit">
-            DESISTIR
-        </button>
+        <template v-if="running">
+            <button class="btn atack"> Ataque </button>
+            <button class="btn special-atack"> Ataque Especial </button>
+            <button class="btn heal"> Curar </button>
+            <button class="btn give-up"> Desistir </button>
+        </template>
+        <button v-else class="btn new-game"> Iniciar Novo Jogo </button>
     </div>
 
+<!-- Painel de Logs -->
     <div class="panel logs">
 
     </div>
