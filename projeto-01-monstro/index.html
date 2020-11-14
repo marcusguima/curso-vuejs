@@ -12,6 +12,21 @@
 
 <div id="app">
     <div class="panel scores">
+        <div class="score">
+            <h1>Jogador</h1>
+            <div class="life-bar">
+            <div class="life" :class="{danger: playerLife <= 20}" :style="{width: playerLife + '%'}"></div>
+            </div>
+            <div>{{ playerLife }}%</div>
+        </div>
+
+        <div class="score">
+            <h1>Monstro</h1>
+            <div class="life-bar">
+                <div class="life" :class="{danger: monsterLife <= 20}" :style="{width: monsterLife + '%'}"></div>
+            </div>
+            <div>{{ monsterLife }}%</div>
+        </div>
 
     </div>
 
@@ -20,11 +35,25 @@
     </div>
 
     <div class="panel buttons">
-
+        <button id="btnNewGame"> 
+            INICIAR NOVO JOGO
+        </button>
+        <button id="btnAtack">
+            ATAQUE
+        </button>
+        <button id="btnSAtack">
+            ATAQUE ESPECIAL
+        </button>
+        <button id="btnHeal">
+            CURAR
+        </button>
+        <button id="btnQuit">
+            DESISTIR
+        </button>
     </div>
 
     <div class="panel logs">
-        
+
     </div>
 </div>
 

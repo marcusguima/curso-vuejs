@@ -13,3 +13,43 @@ html{
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
+
+/* Área de Pontos */
+
+.scores{
+    display: flex;
+}
+
+.score{
+    flex: 1;               /* permite crescer e ocupar a tela inteira */                     
+    display: flex;
+    flex-direction: column;  /* itens um em baixo do outro */
+    
+    /* centralização dos itens */
+    justify-content: center;
+    align-items: center;
+
+}
+
+.score h1 {
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+
+.life-bar {
+    width: 80%;
+    height: 20px;
+    border: 1px solid #AAA;
+}
+
+.life-bar .life {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: green;
+}
+
+.life-bar .life.danger {
+    background-color: red;
+}
