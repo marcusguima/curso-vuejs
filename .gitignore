@@ -1,2 +1,5 @@
-
+# Ignorar os arquivos de Sistema
 .DS_Store
+
+# Ignorar a pasta de dependencias do Node
+node_modules
